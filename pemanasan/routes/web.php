@@ -18,6 +18,6 @@ Route::get('/', function () {
 });
 
 Route::get('profile/{name}', function($name){
-    return view('profile/'.$name, ["name"=>$name]);
+    return view('profile/'.strtolower($name), ["name"=>strtolower($name)]);
 }
 );

@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
 	<head>
+		<title>Samuel Sebastian</title>
 		<!-- Required meta tags -->
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -13,7 +14,7 @@
 		<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Lato&family=Shadows+Into+Light&display=swap" rel="stylesheet"> 
 
 		<style>
-			.custom-body{
+			.custom-body-color{
 				background-color: #fcfcfc !important;
 			}
 			.custom-navbar-color{
@@ -44,16 +45,18 @@
 
 
 		
-		<title>Samuel Sebastian</title>
+		
 	</head>
-	<body class="custom-body" style="box-sizing: border-box; font-family: 'Lato', sans-serif;">
+	<body class="custom-body-color" style="box-sizing: border-box; font-family: 'Lato', sans-serif;">
 		<!-- Navbar -->
-		<nav class="navbar navbar-expand-lg bg-light custom-navbar-color">
+		<nav class="navbar navbar-expand-lg bg-light custom-navbar-color fixed-top shadow-sm">
 		  <div class="container-fluid">
-		    <a class="navbar-brand" href="#">Pemanasan Kelompok 9</a>
+		    <a class="navbar-brand  " href="..">Pemanasan Kelompok 9</a>
+		    
 		    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
 		      <span class="navbar-toggler-icon"></span>
 		    </button>
+
 		    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 		      <div class="navbar-nav">
 		      	<a class="nav-link rounded-5 custom-navbar-item-color<?php
@@ -89,12 +92,12 @@
 		</nav>
 		
 		<!-- Profile -->
-		<div class="container-fluid">
+		<div class="container-fluid" style="margin-top: 45px">
 			<div class="row">
 				<div class="col-lg-4" >
 					<div class="card mb-4 shadow rounded-4 custom-card-pop-color" style="margin: 30px; padding: 20px">
 						<div class="card-body text-center">
-							<img src="../img/samuel.jpg" class="rounded-4" alt="Samuel Sebastian" style="max-width: 70%;">
+							<img src="../img/samuel.jpg" class="rounded-4 shadow" alt="Samuel Sebastian" style="max-width: 70%;">
 							<h1 class="my-3" style="font-family: 'Caveat', cursive; font-weight:bold;">Samuel Sebastian</h1>
 							<p class="text-muted mb-1">Computer Science and Statistics</p>
 							<p class="text-muted mb-1">Binus University, Jakarta</p>
