@@ -15,10 +15,10 @@
 
 		<style>
 			.custom-body-color{
-				background-color: #fcfcfc !important;
+				background-color: #fdfdf6 !important;
 			}
 			.custom-navbar-color{
-				background-color: #f3eaeb !important;
+				background-color: #ebefe2 !important;
 			}
 			.custom-navbar-item-color {
 				margin:1%;
@@ -27,19 +27,19 @@
 				padding-right: 2%;
 			}
 			.custom-navbar-item-color:hover{
-				background-color: #e7dcdd !important;
+				background-color: #dee2d5 !important;
 			}
 
 			.custom-navbar-item-color.active{
-				background-color: #ffdad9 !important;
+				background-color: #d9e7cb !important;
 			}
 
 			.custom-card-color {
-				background-color: #f5f0f0 !important;
+				background-color: #f0f3e8 !important;
 			}
 
 			.custom-card-pop-color {
-				background-color: #ffdad9 !important;
+				background-color: #d9e7cb !important;
 			}
 		</style>
 
