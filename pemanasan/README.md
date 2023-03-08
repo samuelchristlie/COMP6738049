@@ -2,4 +2,4 @@
 - Samuel Sebastian (2440085316)
 - Delvina
 - Mary
-- Nicholaus
+- Nicholaus (2440102120)
