@@ -12,13 +12,13 @@ This repository only contains files added or modified from the default Laravel p
 ![Gambar Home Page](https://github.com/samuelchristlie/COMP6738049/blob/main/pemanasan/ScreenShot/HomePage.jpg)
 
 # Samuel's Profile
-![Gambar Home Page](https://github.com/samuelchristlie/COMP6738049/blob/main/pemanasan/ScreenShot/SamuelProfile.jpg)
+![Gambar Profile Samuel](https://github.com/samuelchristlie/COMP6738049/blob/main/pemanasan/ScreenShot/SamuelProfile.jpg)
 
 # Delvina's Profile
-![Gambar Home Page](https://github.com/samuelchristlie/COMP6738049/blob/main/pemanasan/ScreenShot/DelvinaProfile.jpg)
+![Gambar Profile Delvina](https://github.com/samuelchristlie/COMP6738049/blob/main/pemanasan/ScreenShot/DelvinaProfile.jpg)
 
 # Mary's Profile
-
+![Gambar Profile Mary](https://github.com/samuelchristlie/COMP6738049/raw/main/pemanasan/ScreenShot/MaryProfile.png)
 
 # Nicholaus's Profile
-![Gambar Home Page](https://github.com/samuelchristlie/COMP6738049/blob/main/pemanasan/ScreenShot/NicholausProfile.jpg)
+![Gambar Profile Nicholaus](https://github.com/samuelchristlie/COMP6738049/blob/main/pemanasan/ScreenShot/NicholausProfile.jpg)
