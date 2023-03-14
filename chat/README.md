@@ -10,6 +10,7 @@ http://laraveltest1.rf.gd/chat/
 
 ## Screenshots
 
-![Menu](link)
-![Profile](Link)
+![Login](https://github.com/samuelchristlie/COMP6738049/blob/main/chat/screenshot/login.png)
+![Theming](https://github.com/samuelchristlie/COMP6738049/blob/main/chat/screenshot/theme.png)
+![Chat](https://github.com/samuelchristlie/COMP6738049/blob/main/chat/screenshot/chat.png)
 
