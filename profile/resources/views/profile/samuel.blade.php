@@ -30,3 +30,9 @@
  <button class="btn btn-primary" onclick="document.location='/chat/'">Contact me!</button>
 
 @endsection
+
+@section("picture")
+ <img src="../pemanasan/public/img/samuel.jpg" class="rounded-4 shadow" alt="Samuel Sebastian" style="max-width: 70%;">
+
+@endsection
+

@@ -67,6 +67,7 @@
         <div class="col-lg-4" >
           <div class="card mb-4 shadow rounded-4 " style="margin: 30px; padding: 20px">
             <div class="card-body text-center">
+              @yield("picture")
               <h1 class="my-3" style="font-family: 'Caveat', cursive; font-weight:bold;">@yield("fullName")</h1>
               <p class="text-muted mb-1">@yield("major")</p>
               <p class="text-muted mb-1">@yield("univ")</p>
