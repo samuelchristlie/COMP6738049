@@ -27,6 +27,6 @@
 
 @section("extraContent")
  <hr>
- <button class="btn btn-primary" onclick="document.location='/chat/'">Check out my latest project here!</button>
+ <button class="btn btn-primary" onclick="document.location='/chat/'">Contact me!</button>
 
 @endsection
