@@ -10,5 +10,5 @@ http://laraveltest1.rf.gd/profile/
 ## Screenshots
 
 ![Menu](https://github.com/samuelchristlie/COMP6738049/blob/main/profile/screenshot/home.png)
-![Profile](https://github.com/samuelchristlie/COMP6738049/blob/main/profile/screenshot/profile.png)
+![Profile](https://github.com/samuelchristlie/COMP6738049/blob/main/profile/screenshot/profile2.png)
 
