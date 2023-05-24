@@ -16,10 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-<<<<<<< HEAD
-=======
 
 Route::get('home', function () {
     return view('home');
 });
->>>>>>> 6478ee5 (Home draft)
