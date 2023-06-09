@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('from');
             $table->string('to');
             $table->string('content_chats');
-            $table->string('chats_date');
+            $table->date('chats_date');
             $table->timestamps();
         });
     }

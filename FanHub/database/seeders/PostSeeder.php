@@ -16,13 +16,13 @@ class PostSeeder extends Seeder
         Post::insert([
             'user_id' => 1,
             'content' => 'Terima kasih atas kerja keras hari ini~',
-            'post_date' => '14/06/2023',
+            'post_date' => '2023/06/14',
         ]);
 
         Post::insert([
             'user_id' => 1,
             'content' => 'Jangan lupa makan~',
-            'post_date' => '12/07/2023',
+            'post_date' => '2023/07/12',
         ]);
     }
 }

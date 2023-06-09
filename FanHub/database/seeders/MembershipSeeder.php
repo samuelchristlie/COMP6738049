@@ -15,7 +15,7 @@ class MembershipSeeder extends Seeder
         //
         Membership::insert([
             'user_id' => 1,
-            'membership_end' => '1 June 2023',
+            'membership_end' => '2023/06/01',
         ]);
     }
 }

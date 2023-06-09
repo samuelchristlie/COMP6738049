@@ -17,3 +17,6 @@ Route::get('/', function () {
     return view('signUp');
 });
 
+Route::get('/profile', function (){
+    return view('profile');
+});

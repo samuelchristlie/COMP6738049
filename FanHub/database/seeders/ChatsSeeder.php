@@ -17,7 +17,7 @@ class ChatsSeeder extends Seeder
             'from' => 'Delvina',
             'to' => 'seventeen',
             'content_chats' => 'Kapan nih mau world tour keliling Indonesia? :)',
-            'chats_date' => '10/06/2023',
+            'chats_date' => '2023/06/10',
         ]);
     }
 }
