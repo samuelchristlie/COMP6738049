@@ -15,9 +15,9 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('product_id');
             $table->unsignedBigInteger('user_id');
-            $table->integer('quantity')->nullable();
+            $table->integer('quantity');
             $table->string('payment_method');
-            $table->float('price');
+            $table->integer('price');
             $table->string('address');
             $table->timestamps();
 

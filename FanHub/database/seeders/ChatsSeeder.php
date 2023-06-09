@@ -14,10 +14,24 @@ class ChatsSeeder extends Seeder
     {
         //
         Chats::insert([
-            'from' => 'Delvina',
-            'to' => 'seventeen',
-            'content_chats' => 'Kapan nih mau world tour keliling Indonesia? :)',
-            'chats_date' => '2023/06/10',
+            'from' => 1,
+            'to' => 2,
+            'content' => 'Kapan nih mau world tour keliling Indonesia? :)',
+            'sent_date' => '2023/06/10',
+        ]);
+
+        Chats::insert([
+            'from' => 1,
+            'to' => 3,
+            'content' => 'Kapan nih mau world tour keliling Indonesia? :)',
+            'sent_date' => '2023/06/10',
+        ]);
+
+        Chats::insert([
+            'from' => 4,
+            'to' => 1,
+            'content' => 'Hai Delvina',
+            'sent_date' => '2023/06/10',
         ]);
     }
 }

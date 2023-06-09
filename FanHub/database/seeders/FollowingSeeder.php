@@ -15,7 +15,12 @@ class FollowingSeeder extends Seeder
         //
         Following::insert([
             'user_id' => 1,
-            // 'artist_id' => 5,
+            'artist_id' => 2,
+        ]);
+
+        Following::insert([
+            'user_id' => 1,
+            'artist_id' => 3,
         ]);
     }
 }
