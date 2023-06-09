@@ -32,7 +32,16 @@
               <label for="inputUserName" class="form-label">Username</label>
             </div>
             <div>
-              <input type="text"  placeholder="Type here" class="input input-bordered w-96 max-w-xs" id="inputUserame">
+              <input type="text"  placeholder="Type here" class="input input-bordered w-96 max-w-xs" id="inputUsername">
+            </div>
+          </div>
+
+          <div class="mb-2">
+            <div class="mb-2">
+              <label for="inputAddress" class="form-label">Address</label>
+            </div>
+            <div>
+              <input type="text"  placeholder="Type here" class="input input-bordered w-96 max-w-xs" id="inputAddress">
             </div>
           </div>
       

@@ -13,7 +13,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/login', function () {
     return view('login');
 });
 
+Route::get('/sign-up', function () {
+    return view('signUp');
+});
+
+Route::get('/modal', function () {
+    return view('modal');
+});
+
+Route::get('/posts', function () {
+    return view('posts');
+});
+
+Route::get('/transaction-page', function () {
+    return view('transactionPage');
+});
