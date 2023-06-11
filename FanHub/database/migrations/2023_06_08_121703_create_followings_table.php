@@ -14,10 +14,11 @@ return new class extends Migration
         Schema::create('followings', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
-            // $table->unsignedBigInteger('artist_id');
+            $table->unsignedBigInteger('artist_id');
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('artist_id')->references('id')->on('users')->onDelete('cascade');
 
         });
     }

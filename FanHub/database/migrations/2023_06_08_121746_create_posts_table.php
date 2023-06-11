@@ -15,11 +15,12 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->string('content');
-            // $table->
+            $table->unsignedBigInteger('parent_post')->nullable();
             $table->date('post_date');
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('parent_post')->references('id')->on('posts')->onDelete('cascade');
         });
     }
 

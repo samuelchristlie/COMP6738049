@@ -8,4 +8,22 @@ use Illuminate\Database\Eloquent\Model;
 class Membership extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'user_id',
+        'membership_end',
+    ];
+
+    protected $dates = [
+        'membership_end',
+    ];
+
+    protected $casts = [
+        'membership_end' => 'date',
+    ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
