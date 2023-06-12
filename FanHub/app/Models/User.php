@@ -20,7 +20,14 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
+        'username',
+        'first_name',
+        'last_name',
         'password',
+        'role',
+        'address',
+        'profile_picture',
+        'session',
     ];
 
     /**
@@ -38,8 +45,48 @@ class User extends Authenticatable
      *
      * @var array<string, string>
      */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-        'password' => 'hashed',
-    ];
+    // protected $casts = [
+    //     'email_verified_at' => 'datetime',
+    //     'password' => 'hashed',
+    // ];
+
+    public function transactions()
+    {
+        return $this->hasMany(Transaction::class);
+    }
+
+    public function membership()
+    {
+        return $this->hasMany(Membership::class);
+    }
+
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
+    }
+
+    public function likes()
+    {
+        return $this->hasMany(Like::class);
+    }
+
+    public function sentChats()
+    {
+        return $this->hasMany(Chat::class, 'from');
+    }
+
+    public function receivedChats()
+    {
+        return $this->hasMany(Chat::class, 'to');
+    }
+
+    public function followings()
+    {
+        return $this->hasMany(Following::class, 'user_id');
+    }
+
+    public function followers()
+    {
+        return $this->hasMany(Following::class, 'artist_id');
+    }
 }

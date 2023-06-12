@@ -32,3 +32,6 @@ Route::get('/posts', function () {
 Route::get('/transaction-page', function () {
     return view('transactionPage');
 });
+Route::get('/profile', function (){
+    return view('profile');
+});
