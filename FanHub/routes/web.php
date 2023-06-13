@@ -13,27 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-<<<<<<< HEAD
-Route::get('/login', function () {
-    return view('login');
-});
-
-Route::get('/sign-up', function () {
-    return view('signUp');
-});
-
-Route::get('/modal', function () {
-    return view('modal');
-});
-
-Route::get('/posts', function () {
-    return view('posts');
-});
-
-Route::get('/transaction-page', function () {
-    return view('transactionPage');
-});
-=======
 Route::get('/signup', function () {
     return view('signUp');
 });
@@ -42,7 +21,6 @@ Route::get('/login', function () {
     return view('login');
 });
 
->>>>>>> origin/delvina
 Route::get('/profile', function (){
     return view('profile');
 });
