@@ -1,7 +1,12 @@
 @extends('template')
 
+<<<<<<< HEAD
 @section('content')    
     <div class="flex justify-center text-3xl font-semibold">
+=======
+@section('content')
+    <div class="flex justify-center text-3xl font-semibold mb-5">
+>>>>>>> origin/delvina
         Account Sign Up
     </div>
 
@@ -25,6 +30,7 @@
               <input type="text"  placeholder="Type here" class="input input-bordered w-96 max-w-xs" id="inputLastName">
             </div>
           </div>
+<<<<<<< HEAD
       
       
           <div class="mb-2">
@@ -34,6 +40,13 @@
             <div>
               <input type="text"  placeholder="Type here" class="input input-bordered w-96 max-w-xs" id="inputUsername">
             </div>
+=======
+      </div>
+      <div class="flex justify-center container">
+          <div class="mb-3">
+            <label for="inputUserName" class="form-label">Username</label>
+            <input type="text"  placeholder="Type here" class="input input-bordered w-full max-w-xs" id="inputUsername">
+>>>>>>> origin/delvina
           </div>
 
           <div class="mb-2">
@@ -54,6 +67,7 @@
               <input type="email" placeholder="Type here" class="input input-bordered w-96 max-w-xs" id="inputEmail">
             </div>
           </div>
+<<<<<<< HEAD
       
       
           <div class="mb-2">
@@ -71,7 +85,25 @@
           </div>
         </div>
 
+=======
       </div>
-        
+
+      <div class="row mb-4">
+        <div class="col d-flex justify-content-center">
+          <!-- Checkbox -->
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="remember" name="remember" checked />
+            <label class="form-check-label text-sm" for="remember-me"> Remember me </label>
+          </div>
+        </div>
+>>>>>>> origin/delvina
+      </div>
+
+      <!-- Sign In button -->
+      <div class="flex justify-center container">
+        <button type="submit" class="btn-lg btn normal-case w-64 rounded bg-daisy text-black">Sign In</button>
+      </div>
+    </div>
+
     </form>
 @endsection

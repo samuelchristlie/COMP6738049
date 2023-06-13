@@ -27,7 +27,11 @@ class Products extends Model
         return $this->hasMany(Transaction::class);
     }
 
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> origin/delvina
 
 
 }
