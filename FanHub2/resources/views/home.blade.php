@@ -29,7 +29,7 @@
 			</figure>
 			<div class="relative ">
 				<div class="avatar absolute mx-auto inset-x-0 -top-6">
-					<div class="h-10 rounded-full mx-auto ring-2 ring-white ring-offset-0">
+					<div class="h-10 w-10 rounded-full mx-auto ring-2 ring-white ring-offset-0">
 						<img src="/images/image 11.png" />
 					</div>
 				</div>

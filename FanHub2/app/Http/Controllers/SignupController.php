@@ -26,12 +26,12 @@ class SignupController extends Controller
         }
         
         $validator = Validator::make($request->all(), [
-            'name' => 'required|string|min:3',
-            'user' => 'required|regex:/^[a-zA-Z0-9_\.]+$/|unique:users,username',
-            'email' => 'required|email|unique:users,email',
-            'pass' => 'required|min:6',
+            'name' => 'required|string|min:3|max:64',
+            'user' => 'required|regex:/^[a-zA-Z0-9_\.]+$/|unique:users,username|max:64',
+            'email' => 'required|email|unique:users,email|max:64',
+            'pass' => 'required|min:6|max:64',
             'confirmPass' => 'required|same:pass',
-            'address' => 'required|string',
+            'address' => 'required|string|max:128',
         ]);
 
         $validator->setAttributeNames([
