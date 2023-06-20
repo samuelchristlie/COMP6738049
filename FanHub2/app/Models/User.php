@@ -29,24 +29,29 @@ class User extends Model
 		return $this->role === "Artist" && $this->verify;
 	}
 
+	public function isUnverifiedArtist()
+	{
+		return $this->role === "Artist" && $this->verify;
+	}
+
 	public function transactions()
 	{
-		return $this->hasMany(Transaction::class);
+		return $this->hasMany(Transaction::class, 'userId');
 	}
 
 	public function membership()
 	{
-		return $this->hasMany(Membership::class);
+		return $this->hasMany(Membership::class, 'userId');
 	}
 
 	public function posts()
 	{
-		return $this->hasMany(Post::class);
+		return $this->hasMany(Post::class, 'userId');
 	}
 
 	public function likes()
 	{
-		return $this->hasMany(Like::class);
+		return $this->hasMany(Like::class, 'userId');
 	}
 
 	public function chatsWith()

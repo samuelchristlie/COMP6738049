@@ -20,8 +20,8 @@ return new class extends Migration
             $table->string('role')->default("User");
             $table->boolean('verify')->default(false);
             $table->string('address');
-            $table->string('profilePicture')->default("images/profile/default.png");
-            $table->string('coverPicture')->default("images/cover/default.png");
+            $table->string('profilePicture')->default("images/defaultProfile.png");
+            $table->string('coverPicture')->default("images/defaultCover.png");
             // $table->string('googleId')->nullable();
             $table->date('lastNotif')->default(now());
             $table->string('session')->nullable();

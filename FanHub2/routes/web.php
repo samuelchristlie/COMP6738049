@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SignupController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,3 +37,6 @@ Route::post('login', [LoginController::class, 'login']);
 Route::get('logout', [LoginController::class, 'logout']);
 
 Route::get('@{username}', [ProfileController::class, 'index']);
+
+Route::post('new-post', [PostController::class, 'createPost']);
+Route::post('like-post', [PostController::class, 'likePost']);
