@@ -31,8 +31,13 @@ class User extends Model
 
 	public function isUnverifiedArtist()
 	{
-		return $this->role === "Artist" && $this->verify;
+		return $this->role === "Artist" && !$this->verify;
 	}
+
+	// public function isActiveMember()
+	// {
+		
+	// }
 
 	public function transactions()
 	{
