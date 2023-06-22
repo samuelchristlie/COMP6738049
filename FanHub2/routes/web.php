@@ -6,6 +6,7 @@ use App\Http\Controllers\SignupController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,3 +43,6 @@ Route::post('edit-profile', [ProfileController::class, 'editProfile']);
 
 Route::post('new-post', [PostController::class, 'createPost']);
 Route::post('like-post', [PostController::class, 'likePost']);
+
+Route::get('admin', [AdminController::class, 'index']);
+Route::post('approve-artist', [AdminController::class, 'approveArtist']);

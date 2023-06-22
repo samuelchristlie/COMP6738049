@@ -4,19 +4,27 @@
 	<div class="card card-bordered border-gray-300 w-full shadow-lg pt-4 pb-2">
 		{{-- Avatar --}}
 		<div class="mx-8 mb-2">
-			<a href="/{{"@".$post->user->username}}">
-				<div class="flex items-start">
+			
+			<div class="flex items-start">
+				<a href="/{{"@".$post->user->username}}">
 					<img src="{{ $post->user->profilePicture }}" alt="Avatar" class="w-12 h-12 rounded-full mr-4">
-					<div>
+					<div class="relative w-full">
 						<div class="flex">
 							<h3 class="font-bold mr-1">{{$post->user->name}}</h3>
 							@include('component.checkmark', ["size" => 5])
 							
 						</div>
 						<p class="text-gray-600">{{ "@".$post->user->username }}</p>
-					</div>
+					</a>
+					
+					{{-- <a href="#">
+						<button class="btn btn-sm btn-primary absolute top-0 right-0">
+						Follow
+						</button>
+					</a> --}}
 				</div>
-			</a>
+			</div>
+			
 		</div>
 		
 		
@@ -87,37 +95,37 @@
 		
 		@if(isset($user))
 		<script>
-		const button = document.querySelector('#likeButton{{ $post->id }}');
-		const svgIcon = button.querySelector("svg");
-		
-		button.addEventListener('click', function(event) {
-		event.preventDefault();
-		
-		const formData = new FormData();
-		formData.append('_token', "{{ csrf_token() }}");
-		formData.append('post', '{{ $post->id}}');
-		
-		fetch('/like-post', {
-		method: 'POST',
-		body: formData
-		})
-		.then(response => response.json())
-		.then(data => {
-		if (data.status === 'success') {
-		svgIcon.classList.toggle("text-primary");
-		
-		if (svgIcon.getAttribute('fill') === 'none') {
-		svgIcon.setAttribute('fill', 'currentColor');
-		} else {
-		svgIcon.setAttribute('fill', 'none');
-		}
-		}
-		console.log(data);
-		})
-		.catch(error => {
-		console.error(error);
-		});
-		});
+			const button = document.querySelector('#likeButton{{ $post->id }}');
+			const svgIcon = button.querySelector("svg");
+			
+			button.addEventListener('click', function(event) {
+			event.preventDefault();
+			
+			const formData = new FormData();
+			formData.append('_token', "{{ csrf_token() }}");
+			formData.append('post', '{{ $post->id}}');
+			
+			fetch('/like-post', {
+			method: 'POST',
+			body: formData
+			})
+			.then(response => response.json())
+			.then(data => {
+			if (data.status === 'success') {
+			svgIcon.classList.toggle("text-primary");
+			
+			if (svgIcon.getAttribute('fill') === 'none') {
+			svgIcon.setAttribute('fill', 'currentColor');
+			} else {
+			svgIcon.setAttribute('fill', 'none');
+			}
+			}
+			// console.log(data);
+			})
+			.catch(error => {
+			// console.error(error);
+			});
+			});
 		</script>
 		@endif
 		

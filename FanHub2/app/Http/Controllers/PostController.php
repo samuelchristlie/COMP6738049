@@ -58,7 +58,10 @@ class PostController extends Controller
 
     public function likePost(Request $request){
         if (!$this->isLoggedIn()){
-            return redirect("login");
+            // return redirect("login");
+            return response()->json([
+                'status' => 'failed'
+            ]);
         }
 
         $validator = Validator::make($request->all(), [
