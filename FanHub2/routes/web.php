@@ -51,3 +51,5 @@ Route::post('approve-artist', [AdminController::class, 'approveArtist']);
 Route::get('sell', [ArtistController::class, 'sell']);
 Route::get('create-product', [ArtistController::class, 'createProductIndex']);
 Route::post('create-product', [ArtistController::class, 'createProduct']);
+
+Route::post('follow', [ProfileController::class, 'follow']);

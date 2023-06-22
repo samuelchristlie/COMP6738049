@@ -13,8 +13,10 @@
 			</div>
 		</div>
 		
-		@if(isset($user))
+		
 		<div class="px-8 relative">
+			@if(isset($user))
+			
 			@if($profile->username === $user->username)
 			<a href="/edit-profile">
 				<button class="btn btn-outline btn-primary absolute top-0 right-8">
@@ -22,9 +24,19 @@
 				</button>
 			</a>
 			@else
-			<button class="btn btn-primary absolute top-0 right-8">
+			
+			@if(!$user->follows($profile))
+			<button class=" absolute top-0 right-8 btn btn-primary followUser{{$profile->id}}">
 			Follow
 			</button>
+			@else
+			<button class=" absolute top-0 right-8 btn btn-primary btn-outline followUser{{$profile->id}}">
+			Unfollow
+			</button>
+			@endif
+			
+			@endif
+			
 			@endif
 			
 			<div class="flex">
@@ -37,9 +49,18 @@
 			<p class="">
 				{{ "@".$profile->username }}
 			</p>
+			<p class="mt-3 mb-4">
+				<span class="font-bold">300</span> Fans
+			</p>
 			
 		</div>
-		@endif
+		
+		<div class="px-8">
+			<button class="btn btn-primary w-full">
+			Shop
+			</button>
+		</div>
+		
 	</div>
 	
 	{{-- New Post --}}
@@ -75,7 +96,7 @@
 			<form action="/new-post" method="POST" class="mx-8" enctype="multipart/form-data">
 				@csrf
 				<div class="mb-2">
-					<textarea name="content" id="content" rows="4" class="w-full px-3 py-2 border border-gray-300 rounded-lg outline-none focus:border-secondary" placeholder="Share your thoughts...">@if(isset($tagUser)){{"@".$tagUser}}@endif</textarea>
+					<textarea name="content" id="content" rows="4" class="w-full px-3 py-2 border border-gray-300 rounded-lg outline-none focus:border-secondary" placeholder="Share your thoughts...">@if($profile->username !== $user->username){{"@".$profile->username." "}}@endif</textarea>
 				</div>
 				<div class="mb-2">
 					<input type="file" name="image" id="image" class="file-input file-input-sm">
@@ -93,6 +114,58 @@
 	{{-- @include("component.post", ["post", $post]) --}}
 	@include("component.post")
 	@endforeach
+	
+	@if(isset($user))
+	@php
+		$uniqueUsers = compact("profile");
+	@endphp
+	<script>
+		@foreach($uniqueUsers as $uniqueUser)
+			var followUser{{$uniqueUser->id}}Buttons = document.querySelectorAll('.followUser{{$uniqueUser->id}}');;
+			
+			for (let i = 0; i < followUser{{$uniqueUser->id}}Buttons.length; i++) {
+				@if(!$user->follows($uniqueUser))
+				let isFollowingUser{{$uniqueUser->id}} = false;
+				@else
+				let isFollowingUser{{$uniqueUser->id}} = true;
+				@endif
+				
+				followUser{{$uniqueUser->id}}Buttons[i].onclick = function(event) {
+				event.preventDefault();
+				
+				const formDataFollowUser{{$uniqueUser->id}} = new FormData();
+				formDataFollowUser{{$uniqueUser->id}}.append('_token', "{{ csrf_token() }}");
+				formDataFollowUser{{$uniqueUser->id}}.append('artist', '{{ $uniqueUser->id}}');
+				
+				fetch('/follow', {
+				method: 'POST',
+				body: formDataFollowUser{{$uniqueUser->id}}
+				})
+				.then(response => response.json())
+				.then(data => {
+				if (data.status === 'success') {
+					for (let j = 0; j < followUser{{$uniqueUser->id}}Buttons.length; j++) {
+						followUser{{$uniqueUser->id}}Buttons[j].classList.toggle("btn-outline");
+				
+						if (isFollowingUser{{$uniqueUser->id}}) {
+						followUser{{$uniqueUser->id}}Buttons[j].textContent = 'Follow';
+						} else {
+						followUser{{$uniqueUser->id}}Buttons[j].textContent = 'Unfollow';
+						}
+					}
+				isFollowingUser{{$uniqueUser->id}} = !isFollowingUser{{$uniqueUser->id}};
+		
+				}
+				// console.log(data);
+				})
+				.catch(error => {
+				// console.error(error);
+				});
+				};
+			}
+		@endforeach
+	</script>
+	@endif
 	
 	
 	

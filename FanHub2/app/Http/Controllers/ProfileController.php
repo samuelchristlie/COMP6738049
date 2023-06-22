@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Storage;
 
 use App\Models\User;
+use App\Models\Follow;
 
 class ProfileController extends Controller
 {
@@ -138,6 +139,43 @@ class ProfileController extends Controller
         $user->save();
 
         return redirect("/@".$user->username);
+
+    }
+
+    public function follow(Request $request){
+        if (!$this->isLoggedIn()){
+            return redirect("login");
+        }
+
+        $validator = Validator::make($request->all(), [
+            'artist' => 'required|integer|exists:users,id',
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json([
+                'status' => 'failed'
+            ]);
+        }
+
+        $artistId = $request->input("artist");
+
+        $user = $this->getUser();
+
+        $follow = Follow::where("userId", $user->id)->where("artistId", $artistId)->first();
+
+        if($follow){
+            $follow->delete();
+        } else {
+            $follow = Follow::create([
+                'userId' => $user->id,
+                'artistId' => $artistId,
+            ]);
+        }
+
+        return response()->json([
+            'status' => 'success'
+        ]);
+
 
     }
 }

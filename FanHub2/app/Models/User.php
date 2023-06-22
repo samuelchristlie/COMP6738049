@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+
 class User extends Model
 {
 	use HasFactory;
@@ -99,6 +100,17 @@ class User extends Model
 	public function followers()
 	{
 		return $this->hasMany(Following::class, 'artistId');
+	}
+
+	public function follows(User $artist)
+	{
+		$follow = Follow::where("userId", $this->id)->where("artistId", $artist->id)->first();
+		if($follow){
+			return true;
+		} else {
+			return false;
+		}
+
 	}
 
 	public function products()

@@ -17,11 +17,21 @@
 						<p class="text-gray-600">{{ "@".$post->user->username }}</p>
 					</a>
 					
-					{{-- <a href="#">
-						<button class="btn btn-sm btn-primary absolute top-0 right-0">
-						Follow
-						</button>
-					</a> --}}
+					@if(isset($user))
+					@if($user->username !== $post->user->username)
+					
+					@if(!$user->follows($post->user))
+					<button class="btn btn-sm btn-primary absolute top-0 right-0 followUser{{$post->user->id}}">
+					Follow
+					</button>
+					@else
+					<button class="btn btn-outline btn-sm btn-primary absolute top-0 right-0 followUser{{$post->user->id}}">
+					Unfollow
+					</button>
+					@endif
+					
+					@endif
+					@endif
 				</div>
 			</div>
 			
@@ -95,29 +105,29 @@
 		
 		@if(isset($user))
 		<script>
-			const button = document.querySelector('#likeButton{{ $post->id }}');
-			const svgIcon = button.querySelector("svg");
+			const likeButton{{ $post->id }} = document.querySelector('#likeButton{{ $post->id }}');
+			const svgIcon{{ $post->id }} = likeButton{{ $post->id }}.querySelector("svg");
 			
-			button.addEventListener('click', function(event) {
+			likeButton{{ $post->id }}.addEventListener('click', function(event) {
 			event.preventDefault();
 			
-			const formData = new FormData();
-			formData.append('_token', "{{ csrf_token() }}");
-			formData.append('post', '{{ $post->id}}');
+			const formData{{ $post->id }} = new FormData();
+			formData{{ $post->id }}.append('_token', "{{ csrf_token() }}");
+			formData{{ $post->id }}.append('post', '{{ $post->id}}');
 			
 			fetch('/like-post', {
 			method: 'POST',
-			body: formData
+			body: formData{{ $post->id }}
 			})
 			.then(response => response.json())
 			.then(data => {
 			if (data.status === 'success') {
-			svgIcon.classList.toggle("text-primary");
+			svgIcon{{ $post->id }}.classList.toggle("text-primary");
 			
-			if (svgIcon.getAttribute('fill') === 'none') {
-			svgIcon.setAttribute('fill', 'currentColor');
+			if (svgIcon{{ $post->id }}.getAttribute('fill') === 'none') {
+			svgIcon{{ $post->id }}.setAttribute('fill', 'currentColor');
 			} else {
-			svgIcon.setAttribute('fill', 'none');
+			svgIcon{{ $post->id }}.setAttribute('fill', 'none');
 			}
 			}
 			// console.log(data);
@@ -126,7 +136,11 @@
 			// console.error(error);
 			});
 			});
+
+			
 		</script>
+
+
 		@endif
 		
 	</div>
