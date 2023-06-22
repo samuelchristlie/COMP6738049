@@ -7,6 +7,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ArtistController;
 
 /*
 |--------------------------------------------------------------------------
@@ -46,3 +47,7 @@ Route::post('like-post', [PostController::class, 'likePost']);
 
 Route::get('admin', [AdminController::class, 'index']);
 Route::post('approve-artist', [AdminController::class, 'approveArtist']);
+
+Route::get('sell', [ArtistController::class, 'sell']);
+Route::get('create-product', [ArtistController::class, 'createProductIndex']);
+Route::post('create-product', [ArtistController::class, 'createProduct']);
