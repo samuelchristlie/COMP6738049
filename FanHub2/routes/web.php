@@ -36,7 +36,9 @@ Route::get('login', [LoginController::class, 'index']);
 Route::post('login', [LoginController::class, 'login']);
 Route::get('logout', [LoginController::class, 'logout']);
 
-Route::get('@{username}', [ProfileController::class, 'index']);
+Route::get('@{username}', [ProfileController::class, 'indexProfile']);
+Route::get('edit-profile', [ProfileController::class, 'indexEdit']);
+Route::post('edit-profile', [ProfileController::class, 'editProfile']);
 
 Route::post('new-post', [PostController::class, 'createPost']);
 Route::post('like-post', [PostController::class, 'likePost']);

@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('content');
             $table->string('picture')->nullable();
             $table->unsignedBigInteger('parentPost')->nullable();
-            $table->date('postDate')->default(now());
+            $table->timestamp('postDate')->useCurrent();
             $table->timestamps();
 
             $table->foreign('userId')->references('id')->on('users')->onDelete('cascade');

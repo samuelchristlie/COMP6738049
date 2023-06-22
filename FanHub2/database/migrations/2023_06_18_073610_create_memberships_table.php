@@ -16,7 +16,9 @@ return new class extends Migration
         Schema::create('memberships', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('userId');
-            $table->date('membershipEnd')->default(Carbon::now()->addYear());
+            // For MySQL
+            // $table->date('membershipEnd')->default(DB::raw("DATE_ADD(CURRENT_TIMESTAMP(0), INTERVAL 1 YEAR)"));
+            $table->date('membershipEnd')->default(DB::raw("(date('now', '+1 year'))"));
             $table->timestamps();
 
             $table->foreign('userId')->references('id')->on('users')->onDelete('cascade');

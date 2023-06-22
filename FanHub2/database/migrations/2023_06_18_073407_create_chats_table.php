@@ -4,6 +4,8 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
+use Carbon\Carbon;
+
 return new class extends Migration
 {
     /**
@@ -16,7 +18,7 @@ return new class extends Migration
             $table->unsignedBigInteger('from');
             $table->unsignedBigInteger('to');
             $table->string('content');
-            $table->date('sentDate')->default(now());
+            $table->timestamp('sentDate')->useCurrent();
             $table->timestamps();
 
             $table->foreign('from')->references('id')->on('users')->onDelete('cascade');

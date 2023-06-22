@@ -20,14 +20,14 @@ class Transaction extends Model
         'status'
     ];
 
-    protected $dates = [
+    protected $timestamps = [
         'purchasedOn',
     ];
 
     protected $casts = [
         'quantity' => 'integer',
         'price' => 'integer',
-        'purchasedOn' => 'date'
+        'purchasedOn' => 'timestamp'
     ];
 
     public function product()

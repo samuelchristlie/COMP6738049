@@ -1,4 +1,14 @@
-@extends('template', ['pageTitle' => 'FanHub'])
+@if(isset($profile))
+@php
+$title = " - @".$profile->username;
+@endphp
+@else
+@php
+$title = "";
+@endphp
+@endif
+
+@extends('template', ['pageTitle' => 'FanHub'.$title])
 
 @section('header')
 

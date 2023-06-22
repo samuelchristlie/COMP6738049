@@ -16,12 +16,12 @@ class Chat extends Model
         'sentDate',
     ];
 
-    protected $dates = [
+    protected $timestamps = [
         'sentDate',
     ];
 
     protected $casts = [
-        'membershipDate' => 'date',
+        'membershipDate' => 'timestamp',
     ];
 
     public function sender()

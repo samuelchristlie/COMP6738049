@@ -52,6 +52,7 @@ class SignupController extends Controller
         $email = strtolower($request->input("email"));
         $pass = Hash::make($request->input("pass"));
         $address = $request->input("address");
+        
         if ($request->has("artist") && $request->input("artist") === "true"){
             $role = "Artist";
         } else {
