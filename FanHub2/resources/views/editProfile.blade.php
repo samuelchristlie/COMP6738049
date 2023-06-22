@@ -23,7 +23,7 @@
 		</div>
 		@endif
 		
-		<form class="md:card md:card-bordered md:shadow-2xl space-y-6" action="/edit-profile" method="POST" enctype="multipart/form-data">
+		<form class="md:card md:card-bordered md:shadow-2xl" action="/edit-profile" method="POST" enctype="multipart/form-data">
 			@csrf
 			<div class="card-body">
 				<div>
