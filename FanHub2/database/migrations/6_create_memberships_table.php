@@ -17,9 +17,9 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('userId');
             // For MySQL, etc.
-            // $table->date('membershipEnd')->default(DB::raw("DATE_ADD(CURRENT_TIMESTAMP(0), INTERVAL 1 YEAR)"));
+            $table->date('membershipEnd')->default(DB::raw("DATE_ADD(CURRENT_TIMESTAMP(0), INTERVAL 1 YEAR)"));
             // For SQLite
-            $table->date('membershipEnd')->default(DB::raw("(date('now', '+1 year'))"));
+            // $table->date('membershipEnd')->default(DB::raw("(date('now', '+1 year'))"));
             $table->timestamps();
 
             $table->foreign('userId')->references('id')->on('users')->onDelete('cascade');
