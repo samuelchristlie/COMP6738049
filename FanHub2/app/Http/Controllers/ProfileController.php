@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Storage;
 use App\Models\User;
 use App\Models\Follow;
 use App\Models\Product;
+use App\Models\Membership;
 
 class ProfileController extends Controller
 {
@@ -194,5 +195,29 @@ class ProfileController extends Controller
         $products = $artist->products;
 
         return view("profileShop", ["user"=>$user, "products"=>$products, "profile"=>$artist]);
+    }
+
+    public function membership(){
+        if (!$this->isLoggedIn()){
+            return redirect("login");
+        }
+
+        $user = $this->getUser();
+
+        return view("membership", ["user"=>$user]);
+    }
+
+    public function getMembership(){
+        if (!$this->isLoggedIn()){
+            return redirect("login");
+        }
+
+        $user = $this->getUser();
+
+        Membership::create([
+            "userId" =>$user->id,
+        ]);
+
+        return view("membership", ["user"=>$user]);
     }
 }

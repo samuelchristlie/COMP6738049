@@ -64,4 +64,7 @@ Route::get('buy/{productId}', [TransactionController::class, 'confirmBuy']);
 Route::post('confirm-buy', [TransactionController::class, 'buy']);
 Route::get('orders', [TransactionController::class, 'history']);
 
+Route::get('membership', [ProfileController::class, 'membership']);
+Route::post('membership', [ProfileController::class, 'getMembership']);
+
 

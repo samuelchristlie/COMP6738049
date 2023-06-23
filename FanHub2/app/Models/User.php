@@ -158,4 +158,15 @@ class User extends Model
 
     	return false;
     }
+
+    public function isMember(){
+    	$membership = Membership::where("userId", $this->id)->where("membershipEnd", ">", now())->first();
+
+    	return $membership;
+    	// if($membership){
+    	// 	return true;
+    	// } else {
+    	// 	return false;
+    	// }
+    }
 }

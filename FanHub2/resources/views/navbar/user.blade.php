@@ -104,6 +104,11 @@
 					</a>
 				</li>
 				<li>
+					<a href = "/membership">
+						Membership
+					</a>
+				</li>
+				<li>
 					<a href="/logout">
 						Logout
 					</a>
