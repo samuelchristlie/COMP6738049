@@ -1,20 +1,25 @@
-<div class="min-h-screen pb-40 sm:mx-20 md:mx-32 lg:mx-72">
-	@include("component.bio")
-	
-	{{-- New Post --}}
-	@if(isset($user))
+@extends('template', ['pageTitle' => 'FanHub - Feed'])
+
+@section('header')
+
+@include('navbar.user')
+
+@endsection
+
+@section('content')
+<div class="min-h-screen pb-40 sm:mx-20 md:mx-32 lg:mx-72 pt-10">
 	@include("component.newPost")
-	@endif
 	
-	@foreach($profile->posts()->orderByDesc("postDate")->get() as $post)
+	@foreach($posts as $post)
 	{{-- @include("component.post", ["post", $post]) --}}
 	@include("component.post")
 	@endforeach
 	
-	@if(isset($user))
 	@php
-	$uniqueUsers = compact("profile");
+	use App\Models\User;
+	$uniqueUsers = User::whereIn("id", $posts->pluck("userId")->unique())->get();
 	@endphp
+	
 	<script>
 		@foreach($uniqueUsers as $uniqueUser)
 			var followUser{{$uniqueUser->id}}Buttons = document.querySelectorAll('.followUser{{$uniqueUser->id}}');;
@@ -61,9 +66,6 @@
 			}
 		@endforeach
 	</script>
-	@endif
-	
-	
-	
 	
 </div>
+@endsection

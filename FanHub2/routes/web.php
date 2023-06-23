@@ -47,6 +47,8 @@ Route::post('edit-profile', [ProfileController::class, 'editProfile']);
 Route::post('new-post', [PostController::class, 'createPost']);
 Route::post('like-post', [PostController::class, 'likePost']);
 
+Route::get('feed', [PostController::class, 'feed']);
+
 Route::get('admin', [AdminController::class, 'index']);
 Route::post('approve-artist', [AdminController::class, 'approveArtist']);
 

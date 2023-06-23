@@ -93,11 +93,27 @@ class PostController extends Controller
             'status' => 'success'
         ]);
 
+    }
 
+    public function feed(){
 
+        if (!$this->isLoggedIn()){
+            return redirect("login");
+        }
 
+        $user = $this->getUser();
 
+        $followings = $user->followings;
 
+        $posts = collect($user->posts);
+        foreach ($followings as $following) {
+            $posts = $posts->merge($following->artist->posts);
+        }
 
+        
+
+        $posts = $posts->sortByDesc('postedOn');
+
+        return view("feed", ["user"=>$user, "posts"=>$posts]);
     }
 }

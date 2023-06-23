@@ -94,12 +94,12 @@ class User extends Model
 
 	public function followings()
 	{
-		return $this->hasMany(Following::class, 'userId');
+		return $this->hasMany(Follow::class, 'userId');
 	}
 
 	public function followers()
 	{
-		return $this->hasMany(Following::class, 'artistId');
+		return $this->hasMany(Follow::class, 'artistId');
 	}
 
 	public function follows(User $artist)

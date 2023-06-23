@@ -1,3 +1,23 @@
+
+{{-- Mentions --}}
+@php
+$pattern = '/@([a-zA-Z0-9_\.]+)/';
+
+use App\Models\User;
+
+$postContent = preg_replace_callback($pattern, function($matches) {
+	$username = $matches[1];
+	$postUser = User::where("username", $username)->first();
+
+	if ($postUser) {
+		return '<a class="text-blue-600" href="' . url("/@".$username) . '">@' . $username . '</a>';
+	} else {
+		return '@' . $username;
+	}	
+}, $post->content);
+
+@endphp
+
 {{-- Post --}}
 <div class="mb-5">
 	
@@ -42,7 +62,8 @@
 		{{-- Caption --}}
 		<div class="mx-8">
 			<p class="">
-				{{$post->content}}
+				{{-- {{$post->content}} --}}
+				{!! $postContent !!}
 			</p>
 			
 		</div>
