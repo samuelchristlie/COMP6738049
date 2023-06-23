@@ -92,7 +92,7 @@ return '@' . $username;
 		
 		{{-- Picture --}}
 		@if($post->picture)
-		<div class="h-72 mx-8 my-4">
+		<div class="aspect-video mx-8 my-4">
 			<figure class="w-full h-full bg-cover rounded-xl" style="background-image: url({{ url($post->picture) }});">
 			</figure>
 		</div>
