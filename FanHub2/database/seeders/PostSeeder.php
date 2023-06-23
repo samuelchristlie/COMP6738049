@@ -24,6 +24,7 @@ class PostSeeder extends Seeder
         //Ekslusif
         Post::insert([
             'userId' => 1,
+            'exclusive' => true,
             'content' => "An unforgettable night immersed in a symphony of sounds and emotions ✨✨ Coldplay Concert: A breathtaking journey of melodies that touched our souls and ignited a million memories. Thank you, Coldplay, for a truly magical experience! 🎶🌟 #ColdplayConcert #UnforgettableNight #MelodiesAndMemories",
             'picture' => "images/Coldplay/FanArtist/Exclusive/2.jpg"
         ]);
@@ -33,20 +34,21 @@ class PostSeeder extends Seeder
         Post::insert([
             'userId' => 2,
             'content' => "Short Getaway❤️",
-            'picture' => "images/Lyodora/FanArtist/Non/2.jpg"
+            'picture' => "images/Lyodra/FanArtist/Non/2.jpg"
         ]);
         
         Post::insert([
             'userId' => 2,
             'content' => "Just be Happy",
-            'picture' => "images/Lyodora/FanArtist/Non/1.jpg"
+            'picture' => "images/Lyodra/FanArtist/Non/1.jpg"
         ]);
 
         //Ekslusif
         Post::insert([
             'userId' => 2,
             'content' => "Show me you are different then let me love you anyway!",
-            'picture' => "images/Lyodora/FanArtist/Exclusive/1.jpg"
+            'exclusive' => true,
+            'picture' => "images/Lyodra/FanArtist/Exclusive/1.jpg"
         ]);
 
         //Seventeen
@@ -61,12 +63,14 @@ class PostSeeder extends Seeder
         Post::insert([
             'userId' => 3,
             'content' => "I miss them already 😥",
+            'exclusive' => true,
             'picture' => "images/Seventeen/FanArtist/Exclusive/1.jpg"
         ]);
 
         Post::insert([
             'userId' => 3,
             'content' => "Happy monthsary!",
+            'exclusive' => true,
             'picture' => "images/Seventeen/FanArtist/Exclusive/2.jpg"
         ]);
 
@@ -82,12 +86,14 @@ class PostSeeder extends Seeder
         Post::insert([
             'userId' => 4,
             'content' => "My heart melts bcs of your smile",
+            'exclusive' => true,
             'picture' => "images/TaylorSwift/FanArtist/Exclusive/1.jpg"
         ]);
 
         Post::insert([
             'userId' => 4,
             'content' => "Happier than I was ✨",
+            'exclusive' => true,
             'picture' => "images/TaylorSwift/FanArtist/Exclusive/2.jpg"
         ]);
 
@@ -108,6 +114,7 @@ class PostSeeder extends Seeder
         //Ekslusif
         Post::insert([
             'userId' => 5,
+            'exclusive' => true,
             'content' => "Hello Concert in Taiwan",
             'picture' => "images/Treasure/FanArtist/Exclusive/2.jpg"
         ]);

@@ -19,6 +19,7 @@ class UserSeeder extends Seeder
             'name' => 'Coldplay',
             'username' => 'coldplay',
             'email' => 'coldplay@gmail.com',
+            'verify' => true,
             'password' => Hash::make('Coldplay123'),
             'role' => 'Artist',
             'verify' => true,
@@ -28,15 +29,16 @@ class UserSeeder extends Seeder
         ]);
 
         User::insert([
-            'name' => 'Lyodora',
-            'username' => 'lyodora',
-            'email' => 'Lyodora@gmail.com',
-            'password' => Hash::make('Lyodora123'),
+            'name' => 'Lyodra',
+            'username' => 'lyodra',
+            'verify' => true,
+            'email' => 'Lyodra@gmail.com',
+            'password' => Hash::make('Lyodra123'),
             'role' => 'Artist',
             'verify' => true,
             'address' => 'Medan, North Sumatera',
-            'profilePicture' => "images/Lyodora/profile/1.jpg",
-            'coverPicture' => "images/Lyodora/profile/1.jpg",
+            'profilePicture' => "images/Lyodra/profile/1.jpg",
+            'coverPicture' => "images/Lyodra/profile/1.jpg",
         ]);
 
         User::insert([
@@ -75,14 +77,23 @@ class UserSeeder extends Seeder
             'coverPicture' => "images/Treasure/profile/1.jpg",
         ]);
 
-        //Tes Account
+        //Admin Account
         User::insert([
-            'name' => 'Tes',
-            'username' => 'Tes',
-            'email' => 'Tes@gmail.com',
+            'name' => 'Admin',
+            'username' => 'Admin',
             'role' => 'Admin',
-            'password' => Hash::make('Tes123'),
-            'address' => 'Seoul, Korea Selatan',
+            'email' => 'Admin@gmail.com',
+            'password' => Hash::make('Admin123'),
+            'address' => 'Anonymous',
+        ]);
+
+        //Test Account
+        User::insert([
+            'name' => 'Test',
+            'username' => 'Test',
+            'email' => 'Test@gmail.com',
+            'password' => Hash::make('Test123'),
+            'address' => 'Test',
         ]);
     }
 }

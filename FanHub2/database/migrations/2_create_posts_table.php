@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('userId');
-            $table->string('content');
+            $table->longText('content');
             $table->string('picture')->nullable();
             $table->unsignedBigInteger('parentPost')->nullable();
             $table->boolean('exclusive')->default(false);
