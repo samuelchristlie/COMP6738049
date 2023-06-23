@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('content');
             $table->string('picture')->nullable();
             $table->unsignedBigInteger('parentPost')->nullable();
+            $table->boolean('exclusive')->default(false);
             $table->timestamp('postDate')->useCurrent();
             $table->timestamps();
 

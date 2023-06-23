@@ -73,10 +73,20 @@ return '@' . $username;
 		
 		{{-- Caption --}}
 		<div class="mx-8">
+
+			@if($post->exclusive && !($user->isMember() || $user->isArtist()))
+			<a href="/membership">
+				<p class="text-center">
+					This is an exclusive post. Only members can view this post!
+				</p>
+			</a>
+			
+			@else
 			<p class="">
 				{{-- {{$post->content}} --}}
 				{!! $postContent !!}
 			</p>
+			@endif
 			
 		</div>
 		
