@@ -17,7 +17,9 @@ class Post extends Model
         'content',
         'picture',
         'parentPost',
+        'exclusive',
         'postDate',
+
     ];
 
     protected $dates = [

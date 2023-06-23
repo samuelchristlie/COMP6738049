@@ -50,6 +50,13 @@ class PostController extends Controller
                 'content' => $content,
             ]);
         }
+
+        if($request->has("exclusive")){
+            if($request->input("exclusive") === "exclusive"){
+                $post->exclusive = true;
+                $post->save();
+            }
+        }
         
 
         
