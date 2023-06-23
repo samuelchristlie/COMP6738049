@@ -1,19 +1,19 @@
-
 {{-- Mentions --}}
 @php
 $pattern = '/@([a-zA-Z0-9_\.]+)/';
 
 use App\Models\User;
+use Carbon\Carbon;
 
 $postContent = preg_replace_callback($pattern, function($matches) {
-	$username = $matches[1];
-	$postUser = User::where("username", $username)->first();
+$username = $matches[1];
+$postUser = User::where("username", $username)->first();
 
-	if ($postUser) {
-		return '<a class="text-blue-600" href="' . url("/@".$username) . '">@' . $username . '</a>';
-	} else {
-		return '@' . $username;
-	}	
+if ($postUser) {
+return '<a class="text-blue-600" href="' . url("/@".$username) . '">@' . $username . '</a>';
+} else {
+return '@' . $username;
+}
 }, $post->content);
 
 @endphp
@@ -37,21 +37,33 @@ $postContent = preg_replace_callback($pattern, function($matches) {
 						<p class="text-gray-600">{{ "@".$post->user->username }}</p>
 					</a>
 					
-					@if(isset($user))
-					@if($user->username !== $post->user->username)
-					
-					@if(!$user->follows($post->user))
-					<button class="btn btn-sm btn-primary absolute top-0 right-0 followUser{{$post->user->id}}">
-					Follow
-					</button>
-					@else
-					<button class="btn btn-outline btn-sm btn-primary absolute top-0 right-0 followUser{{$post->user->id}}">
-					Unfollow
-					</button>
-					@endif
-					
-					@endif
-					@endif
+					<div class="absolute top-0 right-0 ">
+						<span class="text-gray-600">
+							{{Carbon::parse($post->postDate)->diffForHumans()}}
+						</span>
+						@if(isset($user))
+						@if($user->username !== $post->user->username)
+						
+						
+						
+						
+						
+						@if(!$user->follows($post->user))
+						<button class="ml-2 btn btn-sm btn-primary followUser{{$post->user->id}}">
+						Follow
+						</button>
+						@else
+						<button class="ml-2 btn btn-outline btn-sm btn-primary followUser{{$post->user->id}}">
+						Unfollow
+						</button>
+						@endif
+						
+						
+						
+						@endif
+						@endif
+						
+					</div>
 				</div>
 			</div>
 			

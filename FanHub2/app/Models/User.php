@@ -133,4 +133,29 @@ class User extends Model
     public function totalSpent(){
 		return Transaction::where('userId', $this->id)->sum("price") + $this->totalPurchase() * 15000;
     }
+
+    public function newNotif(){
+    	$followings = $this->followings;
+
+    	foreach($followings as $following){
+    		$artist = $following->artist;
+    		$lastPost = Post::where("userId", $artist->id)->latest()->first();
+    		if($lastPost){
+    			if ($lastPost->created_at > $this->lastNotif){
+    			return true;
+    		}
+    		}
+    		
+
+    		$lastProduct = Product::where("userId, $artist->id")->latest()->first();
+    		if($lastProduct){
+    			if ($lastProduct->created_at > $this->lastNotif){
+	    			return true;
+	    		}
+    		}
+    		
+    	}
+
+    	return false;
+    }
 }

@@ -48,6 +48,7 @@ Route::post('new-post', [PostController::class, 'createPost']);
 Route::post('like-post', [PostController::class, 'likePost']);
 
 Route::get('feed', [PostController::class, 'feed']);
+Route::get('notifications', [PostController::class, 'notifications']);
 
 Route::get('admin', [AdminController::class, 'index']);
 Route::post('approve-artist', [AdminController::class, 'approveArtist']);
@@ -62,3 +63,5 @@ Route::get('shop/@{username}', [ProfileController::class, 'shop']);
 Route::get('buy/{productId}', [TransactionController::class, 'confirmBuy']);
 Route::post('confirm-buy', [TransactionController::class, 'buy']);
 Route::get('orders', [TransactionController::class, 'history']);
+
+

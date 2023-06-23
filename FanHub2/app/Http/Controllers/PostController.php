@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Storage;
 
 use App\Models\Post;
 use App\Models\Like;
+use App\Models\Notification;
 
 class PostController extends Controller
 {
@@ -112,8 +113,52 @@ class PostController extends Controller
 
         
 
-        $posts = $posts->sortByDesc('postedOn');
+        $posts = $posts->sortByDesc('postDate');
 
         return view("feed", ["user"=>$user, "posts"=>$posts]);
+    }
+
+    public function notifications(){
+        if (!$this->isLoggedIn()){
+            return redirect("login");
+        }
+
+        $user = $this->getUser();
+
+        $followings = $user->followings;
+
+        $notifications = [];
+
+        foreach($followings as $following){
+            $artist = $following->artist;
+            foreach($artist->posts as $post){
+                $notifications[] = new Notification([
+                    "thumbnail" => $artist->profilePicture,
+                    "content" => $artist->name." created a new post.",
+                    "url" => url("/@".$artist->username),
+                    "time" => $post->postDate
+                ]);
+            }
+
+            foreach($artist->products as $product){
+                $notifications[] = new Notification([
+                    "thumbnail" => $artist->profilePicture,
+                    "content" => $artist->name." listed a new product.",
+                    "url" => url("/shop/@".$artist->username),
+                    "time" => $product->created_at
+                ]);
+            }
+
+
+            $notifications = collect($notifications)->sortByDesc('time');
+
+            
+            
+        }
+
+        $user->lastNotif = now();
+        $user->save();
+
+        return view("notifications", ["user"=>$user, "notifications"=>$notifications]);
     }
 }
