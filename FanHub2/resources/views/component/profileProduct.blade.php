@@ -14,7 +14,7 @@
 	
 	<dialog id="confirmPurchase{{$product->id}}" class="modal">
 	<div method="dialog" class="modal-box">
-		<button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+		<button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2" onclick="confirmPurchase{{$product->id}}.close()">✕</button>
 		<div class="mt-2">
 			<img src="{{url($product->productImage)}}" alt="{{$product->productName}}" class=" rounded-xl w-full h-64 object-cover">
 			<h2 class="text-2xl font-bold mt-4">{{$product->productName}}</h2>
