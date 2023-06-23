@@ -8,6 +8,8 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ArtistController;
+use App\Http\Controllers\TransactionController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -53,3 +55,8 @@ Route::get('create-product', [ArtistController::class, 'createProductIndex']);
 Route::post('create-product', [ArtistController::class, 'createProduct']);
 
 Route::post('follow', [ProfileController::class, 'follow']);
+
+Route::get('shop/@{username}', [ProfileController::class, 'shop']);
+Route::get('buy/{productId}', [TransactionController::class, 'confirmBuy']);
+Route::post('confirm-buy', [TransactionController::class, 'buy']);
+Route::get('orders', [TransactionController::class, 'history']);

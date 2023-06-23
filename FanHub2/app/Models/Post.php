@@ -45,6 +45,23 @@ class Post extends Model
 
     public function likes()
     {
-        return $this->hasMany(Like::class);
+        return $this->hasMany(Like::class, "userId");
+    }
+
+    public function likeCount()
+    {
+        return Like::where('postId', $this->id)->count();
+
+    }
+
+    public function replyCount()
+    {   
+        $count = 0;
+        $replies = Post::where("parentPost", $this->id)->get();
+        foreach ($replies as $reply){
+            $count += 1 + $reply->replyCount();
+        }
+
+        return $count;
     }
 }

@@ -10,7 +10,7 @@
                 <script src="style/cdn.tailwindcss.com_3.3.2.js"></script> -->
 
                 {{-- Insert icon here --}}
-                <link rel="icon" href="favicon.ico">
+                <link rel="icon" href="{{url("favicon.ico")}}">
 
                 {{-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" /> --}}
         </head>

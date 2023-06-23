@@ -117,4 +117,20 @@ class User extends Model
 	{
 		return $this->hasMany(Product::class, 'userId');
 	}
+
+	public function followersCount(){
+        return Follow::where('artistId', $this->id)->count();
+    }
+
+    public function totalPurchase(){
+    	return Transaction::where('userId', $this->id)->count();
+    }
+
+    public function totalBought(){
+    	return Transaction::where('userId', $this->id)->sum("quantity");
+    }
+
+    public function totalSpent(){
+		return Transaction::where('userId', $this->id)->sum("price") + $this->totalPurchase() * 15000;
+    }
 }

@@ -22,7 +22,7 @@ return new class extends Migration
             $table->integer('price');
             $table->string('address');
             $table->timestamp('purchasedOn')->useCurrent();
-            $table->string('status');
+            $table->string('status')->default("Delivered");
             $table->timestamps();
 
             $table->foreign('userId')->references('id')->on('users')->onDelete('cascade');

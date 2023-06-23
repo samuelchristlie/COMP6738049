@@ -20,10 +20,6 @@ class Transaction extends Model
         'status'
     ];
 
-    protected $timestamps = [
-        'purchasedOn',
-    ];
-
     protected $casts = [
         'quantity' => 'integer',
         'price' => 'integer',
@@ -32,11 +28,11 @@ class Transaction extends Model
 
     public function product()
     {
-        return $this->belongsTo(Product::class);
+        return $this->belongsTo(Product::class, "productId");
     }
 
     public function user()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, "userId");
     }
 }

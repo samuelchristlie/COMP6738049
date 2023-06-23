@@ -16,11 +16,12 @@ class Follow extends Model
 
     public function user()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, "userId");
     }
 
     public function artist()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, "artistId");
     }
+
 }

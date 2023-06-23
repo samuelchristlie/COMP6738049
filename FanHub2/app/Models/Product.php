@@ -29,6 +29,10 @@ class Product extends Model
 
     public function transactions()
     {
-        return $this->hasMany(Transaction::class);
+        return $this->hasMany(Transaction::class, "productId");
+    }
+
+    public function totalBought(){
+        return Transaction::where('productId', $this->id)->sum('quantity');
     }
 }

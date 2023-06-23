@@ -2,7 +2,7 @@
 	
 	<div class="navbar-start ">
 		<a href="/" class="btn btn-ghost normal-case text-xl">
-			<img class="h-full" src="images/logo.png"/>
+			<img class="h-full" src="/images/logo.png"/>
 		</a>
 	</div>
 	<div class="navbar-end">
@@ -64,7 +64,7 @@
 		<div class="dropdown dropdown-end">
 			<label tabindex="0" class="btn btn-ghost btn-circle avatar">
 				<div class="w-10 rounded-full">
-					<img src="{{ $user->profilePicture }}" />
+					<img src="{{ url($user->profilePicture) }}" />
 				</div>
 			</label>
 			<ul tabindex="0" class="mt-3 p-2 shadow menu dropdown-content bg-base-100 rounded-box w-52">
@@ -74,7 +74,12 @@
 					</a>
 				</li>
 				<li>
-					<a href="logout">
+					<a href = "/orders">
+						Order History
+					</a>
+				</li>
+				<li>
+					<a href="/logout">
 						Logout
 					</a>
 				</li>

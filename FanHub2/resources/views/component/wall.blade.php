@@ -1,67 +1,5 @@
 <div class="min-h-screen pb-40 sm:mx-20 md:mx-32 lg:mx-72">
-	<div class="rounded-2xl shadow-xl pb-8 mb-8">
-		
-		<div class="hero h-64 mb-16" style="background-image: url({{ $profile->coverPicture }});">
-			<div class="hero-content h-full w-full relative ">
-				
-				<div class="avatar h-32 w-32 absolute left-8 -bottom-16">
-					<div class=" rounded-full mx-auto ring-2 ring-white ring-offset-0">
-						<img src="{{ $profile->profilePicture }}" />
-					</div>
-				</div>
-				
-			</div>
-		</div>
-		
-		
-		<div class="px-8 relative">
-			@if(isset($user))
-			
-			@if($profile->username === $user->username)
-			<a href="/edit-profile">
-				<button class="btn btn-outline btn-primary absolute top-0 right-8">
-				Edit Profile
-				</button>
-			</a>
-			@else
-			
-			@if(!$user->follows($profile))
-			<button class=" absolute top-0 right-8 btn btn-primary followUser{{$profile->id}}">
-			Follow
-			</button>
-			@else
-			<button class=" absolute top-0 right-8 btn btn-primary btn-outline followUser{{$profile->id}}">
-			Unfollow
-			</button>
-			@endif
-			
-			@endif
-			
-			@endif
-			
-			<div class="flex">
-				<h1 class="text-2xl font-bold mr-1">
-				{{$profile->name}}
-				</h1>
-				@include('component.checkmark', ["size" => 6])
-				
-			</div>
-			<p class="">
-				{{ "@".$profile->username }}
-			</p>
-			<p class="mt-3 mb-4">
-				<span class="font-bold">300</span> Fans
-			</p>
-			
-		</div>
-		
-		<div class="px-8">
-			<button class="btn btn-primary w-full">
-			Shop
-			</button>
-		</div>
-		
-	</div>
+	@include("component.bio")
 	
 	{{-- New Post --}}
 	@if(isset($user))
@@ -84,7 +22,7 @@
 					<div>
 						<div class="flex">
 							<h3 class="font-bold mr-1">{{$user->name}}</h3>
-							@include('component.checkmark', ["size" => 5])
+							@include('component.checkmark', ["size" => 5, "user"=>$user])
 							
 						</div>
 						<p class="text-gray-600">{{ "@".$user->username }}</p>
@@ -117,7 +55,7 @@
 	
 	@if(isset($user))
 	@php
-		$uniqueUsers = compact("profile");
+	$uniqueUsers = compact("profile");
 	@endphp
 	<script>
 		@foreach($uniqueUsers as $uniqueUser)

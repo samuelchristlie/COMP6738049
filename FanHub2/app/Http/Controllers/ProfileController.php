@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Storage;
 
 use App\Models\User;
 use App\Models\Follow;
+use App\Models\Product;
 
 class ProfileController extends Controller
 {
@@ -175,7 +176,23 @@ class ProfileController extends Controller
         return response()->json([
             'status' => 'success'
         ]);
+    }
 
+    public function shop($username){
+        if (!$this->isLoggedIn()){
+            return redirect("login");
+        }
 
+        $artist = User::where("username", $username)->first();
+        if(!$artist){
+            return redirect("/@".$username);
+        } else if (!$artist->isArtist()){
+            return redirect("/@".$username);
+        }
+
+        $user = $this->getUser();
+        $products = $artist->products;
+
+        return view("profileShop", ["user"=>$user, "products"=>$products, "profile"=>$artist]);
     }
 }

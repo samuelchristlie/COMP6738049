@@ -10,7 +10,7 @@
 			<br>
 			<p>Price: {{ number_format($product->price) }} IDR<br>
 			Stock: {{ number_format($product->stock) }}<br>
-			Sold: xxx
+			Sold: {{ number_format($product->totalBought()) }}
 			</p>
 
 			<div class="card-actions justify-end">
