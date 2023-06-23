@@ -147,7 +147,7 @@ class User extends Model
     		}
     		
 
-    		$lastProduct = Product::where("userId, $artist->id")->latest()->first();
+    		$lastProduct = Product::where("userId", $artist->id)->latest()->first();
     		if($lastProduct){
     			if ($lastProduct->created_at > $this->lastNotif){
 	    			return true;
