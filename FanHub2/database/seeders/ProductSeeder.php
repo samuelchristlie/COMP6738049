@@ -185,7 +185,7 @@ class ProductSeeder extends Seeder
             'description' => "Taylor Swift's 10th studio album Midnights was released on October 21, 2022. It's a collection of music written in the middle of the night, a journey through terrors and sweet dreams. The floors we pace and the demons we face - the stories of 13 sleepless nights scattered throughout Taylor's life.",
             'price' => 150000,
             'stock' => 100,
-            'productImage' => "images/Taylor Swift/Merchandise/1.jpg"
+            'productImage' => "images/TaylorSwift/Merchandise/1.jpg"
         ]);
 
         Product::insert([
@@ -196,7 +196,7 @@ class ProductSeeder extends Seeder
             This Little Golden Book about Taylor Swift--the singer and songwriter whose distinctive talent for storytelling has made her one of the biggest superstars in both country and pop music--is an inspiring read-aloud for young children as well as their Swiftie parents!",
             'price' => 60000,
             'stock' => 100,
-            'productImage' => "images/Taylor Swift/Merchandise/2.jpg"
+            'productImage' => "images/TaylorSwift/Merchandise/2.jpg"
         ]);
 
         Product::insert([
@@ -205,7 +205,7 @@ class ProductSeeder extends Seeder
             'description' => "2017 release, the sixth studio album from the pop singer/songwriter. Reputation is the long-awaited follow-up to her 2014 album 1989. The album's lead single, quot;Look What You Made Me Doquot;, was released on August 25, 2017. One of the leading contemporary recording artists, Taylor is known for narrative songs about her personal life, which have received widespread media coverage. As a songwriter, Swift has received awards from the Nashville Songwriters Association and the Songwriters Hall of Fame, and was included in Rolling Stone's 100 Greatest Songwriters of All Time in 2015. She is also the recipient of 10 Grammy Awards, five Guinness World Records, one Emmy Award, 21 Billboard Music Awards, 11 Country Music Association Awards, eight Academy of Country Music Awards, and one Brit Award. Swift is one of the best-selling music artists of all time, having sold more than 40 million albums-including 27.8 million in the US-and 130 million single downloads.",
             'price' => 255000,
             'stock' => 100,
-            'productImage' => "images/Taylor Swift/Merchandise/3.jpg"
+            'productImage' => "images/TaylorSwift/Merchandise/3.jpg"
         ]);
 
         Product::insert([
@@ -215,7 +215,7 @@ class ProductSeeder extends Seeder
             22 Songs. Including 6 previously unreleased Songs From The Vault. Collectible Tape album in jewel case with unique front and back cover art. 2 Disc album with unique collectible disc artwork. A collectible lyric booklet with never-before-seen photos",
             'price' => 225000,
             'stock' => 100,
-            'productImage' => "images/Taylor Swift/Merchandise/4.jpg"
+            'productImage' => "images/TaylorSwift/Merchandise/4.jpg"
         ]);
 
         Product::insert([
@@ -225,7 +225,7 @@ class ProductSeeder extends Seeder
             22 Songs. Including 6 previously unreleased Songs From The Vault. Collectible CD album in jewel case with unique front and back cover art. 2 Disc album with unique collectible disc artwork. A collectible lyric booklet with never-before-seen photos",
             'price' => 300000,
             'stock' => 100,
-            'productImage' => "images/Taylor Swift/Merchandise/5.jpg"
+            'productImage' => "images/TaylorSwift/Merchandise/5.jpg"
         ]);
 
         //Treasure  

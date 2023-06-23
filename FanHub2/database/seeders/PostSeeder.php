@@ -75,20 +75,20 @@ class PostSeeder extends Seeder
         Post::insert([
             'userId' => 4,
             'content' => "Kindness is free, Sprinkle that stuff everywhere✨",
-            'picture' => "images/Taylor Swift/FanArtist/Non/3.jpg"
+            'picture' => "images/TaylorSwift/FanArtist/Non/3.jpg"
         ]);
         
         //Ekslusif
         Post::insert([
             'userId' => 4,
             'content' => "My heart melts bcs of your smile",
-            'picture' => "images/Taylor Swift/FanArtist/Exclusive/1.jpg"
+            'picture' => "images/TaylorSwift/FanArtist/Exclusive/1.jpg"
         ]);
 
         Post::insert([
             'userId' => 4,
             'content' => "Happier than I was ✨",
-            'picture' => "images/Taylor Swift/FanArtist/Exclusive/2.jpg"
+            'picture' => "images/TaylorSwift/FanArtist/Exclusive/2.jpg"
         ]);
 
         //Treasure
