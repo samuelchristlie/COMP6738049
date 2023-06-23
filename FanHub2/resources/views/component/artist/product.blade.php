@@ -1,19 +1,17 @@
-<div id="abc" class="mb-5">
-	
-	<div class="card card-side bg-base-100 shadow-xl card-compact">
-		<figure class="w-36 sm:w-44 md:w-48 pl-5 my-5">
-			<img class="rounded-xl w-36" src="{{ $product->productImage}}"/>
+<div id="" class="mb-5">
+	<div class="flex items-center bg-base-100 shadow-xl rounded-xl p-4">
+		<figure class="w-1/4 mr-4">
+			<img class="rounded-xl w-full" src="{{ $product->productImage}}"/>
 		</figure>
-		<div class="card-body card-compact">
-			<h2 class="card-title font-bold">{{ $product->productName}}</h2>
-			<p>{{ $product->description}}</p>
-			<br>
-			<p>Price: {{ number_format($product->price) }} IDR<br>
-			Stock: {{ number_format($product->stock) }}<br>
-			Sold: {{ number_format($product->totalBought()) }}
-			</p>
-
-			<div class="card-actions justify-end">
+		<div class="w-2/3">
+			<h2 class="font-bold">{{ $product->productName}}</h2>
+			<p class="mt-2">{{ $product->description}}</p>
+			<div class="mt-4">
+				<p>Price: {{ number_format($product->price) }} IDR</p>
+				<p>Stock: {{ number_format($product->stock) }}</p>
+				<p>Sold: {{ number_format($product->totalBought()) }}</p>
+			</div>
+			<div class="mt-4 flex justify-end">
 				<button class="btn btn-sm btn-primary">Edit</button>
 			</div>
 		</div>
