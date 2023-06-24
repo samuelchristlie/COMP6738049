@@ -1,11 +1,11 @@
 <div class="rounded-2xl shadow-xl pb-8 mb-8">
 	
-	<div class="hero h-64 mb-16" style="background-image: url({{ $profile->coverPicture }});">
+	<div class="hero h-64 mb-16" style="background-image: url({{ url($profile->coverPicture) }});">
 		<div class="hero-content h-full w-full relative ">
 			
 			<div class="avatar h-32 w-32 absolute left-8 -bottom-16">
 				<div class=" rounded-full mx-auto ring-2 ring-white ring-offset-0">
-					<img src="{{ $profile->profilePicture }}" />
+					<img src="{{ url($profile->profilePicture) }}" />
 				</div>
 			</div>
 			
