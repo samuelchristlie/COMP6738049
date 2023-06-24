@@ -7,17 +7,18 @@
 </ul>
 
 ## Cara setup aplikasi:
-Jalankan `composer install`
-Copy file `.env.example`, kemudian paste di folder projectnya dan hapus `.example`, sehingga hanya tersisa `.env`
-Apabila file `.env` sudah ada, jalankan `php artisan key:generate` di terminal
-Setelah itu, jalankan `php artisan cache:clear` dan `php artisan config:clear` di terminal
-Lalu, jalankan `npm install` di terminal, tunggu sampai selesai install
-Buka XAMPP, nyalakan Apache dan MySQL
-Pada MySQL, klik Admin.
-Anda akan di-direct ke halaman local phpMyAdmin. Di halaman itu, buat database baru dengan nama 'laravel' agar data dapat disimpan dalam database tersebut
-Kemudian jalankan `php artisan migrate:fresh --seed` di terminal, tunggu sampai selesai migrate.
-Jalankan ‘npm install` lalu ‘npm run dev` di terminal
-Navigasi ke localhost yang di generate oleh `php artisan serve`, anda akan di-direct ke instruksi selanjutnya.
+<ol>
+    <li> Jalankan `composer install` </li>
+    <li> Copy file `.env.example`, kemudian paste di folder projectnya dan hapus `.example`, sehingga hanya tersisa `.env` </li>
+    <li> Apabila file `.env` sudah ada, jalankan `php artisan key:generate` di terminal </li>
+    <li> Setelah itu, jalankan `php artisan cache:clear` dan `php artisan config:clear` di terminal </li>
+    <li> Lalu, jalankan `npm install` di terminal, tunggu sampai selesai install </li>
+    <li> Buka XAMPP, nyalakan Apache dan MySQL </li>
+    <li> Pada MySQL, klik Admin. Anda akan di-direct ke halaman local phpMyAdmin. Di halaman itu, buat database baru dengan nama 'laravel' agar data dapat disimpan dalam database tersebut </li>
+    <li> Kemudian jalankan `php artisan migrate:fresh --seed` di terminal, tunggu sampai selesai migrate. </li>
+    <li> Jalankan ‘npm install` lalu ‘npm run dev` di terminal </li>
+    <li> Navigasi ke localhost yang di generate oleh `php artisan serve`, anda akan di-direct ke instruksi selanjutnya. </li>
+</ol>
 
 
 ## Cara menggunakan aplikasi:
