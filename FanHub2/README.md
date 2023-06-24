@@ -22,11 +22,13 @@
 
 
 ## Cara menggunakan aplikasi:
-Sign up diri Anda untuk menjadi bagian dari FanHub, pastikan mengisi semua data diri Anda dengan benar dan sesuai dengan ketentuan.
-Setelah verifikasi berhasil, login dengan menggunakan akun yang sudah dibuat.
-Anda akan ke-redirect ke halaman homepage. Pada halaman tersebut Anda dapat memilih artist mana yang Anda ingin lihat. Sebagai contoh Anda memilih BTS.
-Anda akan menuju ke halaman FanArtist dan juga FanWall. Anda dapat memberikan like dan juga komentar dalam page FanArtist. Anda dapat membuat post pada FanWall yang nantinya bisa saja dilihat oleh Artist kesayangan Anda.
-Jika Anda ingin membeli merch, Anda bisa klik ke halaman merch untuk melihat merch yang sesuai dengan keinginan Anda. 
-Terdapat juga  merch eksklusif yang bisa didapatkan setelah Anda berlangganan membership FanHub. Dengan Anda berlangganan membership, terdapat fitur baru yang hanya bisa diakses oleh membership, yaitu chat.
-Pada fitur Chat, Anda dapat secara langsung berhubungan secara Real-Time dengan artist kesayangan Anda. Chat tersebut langsung tertuju kepada akun Artist dan tidak ada perantara dari pihak FanHub. 
-Anda juga bisa mengubah Profile Anda yang sudah dibuat sebelumnya jika terjadi kesalahan dalam data diri atau hanya ingin mengubah saja pada page Edit Profile.
+<ol>
+    <li> Sign up diri Anda untuk menjadi bagian dari FanHub, pastikan mengisi semua data diri Anda dengan benar dan sesuai dengan ketentuan. </li>
+    <li> Setelah verifikasi berhasil, login dengan menggunakan akun yang sudah dibuat. </li>
+    <li> Anda akan ke-redirect ke halaman homepage. Pada halaman tersebut Anda dapat memilih artist mana yang Anda ingin lihat. Sebagai contoh Anda memilih BTS. </li>
+    <li> Anda akan menuju ke halaman FanArtist dan juga FanWall. Anda dapat memberikan like dan juga komentar dalam page FanArtist. Anda dapat membuat post pada FanWall yang nantinya bisa saja dilihat oleh Artist kesayangan Anda. </li>
+    <li> Jika Anda ingin membeli merch, Anda bisa klik ke halaman merch untuk melihat merch yang sesuai dengan keinginan Anda.  </li>
+    <li> Terdapat juga  merch eksklusif yang bisa didapatkan setelah Anda berlangganan membership FanHub. Dengan Anda berlangganan membership, terdapat fitur baru yang hanya bisa diakses oleh membership, yaitu post konten eksklusif. </li>
+    <li> Pada fitur Chat, Anda dapat secara langsung berhubungan secara Real-Time dengan artist kesayangan Anda. Chat tersebut langsung tertuju kepada akun Artist dan tidak ada perantara dari pihak FanHub.  </li>
+    <li> Anda juga bisa mengubah Profile Anda yang sudah dibuat sebelumnya jika terjadi kesalahan dalam data diri atau hanya ingin mengubah saja pada page Edit Profile. </li>
+</ol>
